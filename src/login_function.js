@@ -18,3 +18,5 @@ signin.addEventListener("click", () => {
     loginin.classList.add("block");
     loginup.classList.add("none");
 })
+
+// html파일과 연결 필요
