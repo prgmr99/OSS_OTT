@@ -3,3 +3,4 @@ axios.get(`https://api.themoviedb.org/3/watch/providers/movie?api_key=6c616e9a21
     .then(pvlist => {
         console.log(pvlist.data);
     });
+    
