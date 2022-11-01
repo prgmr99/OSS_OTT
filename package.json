@@ -1,6 +1,7 @@
 {
   "name": "oss_ott",
   "version": "1.0.0",
+  "type": "module",
   "description": "오픈소스 소프트웨어개발 팀 프로젝트",
   "main": "index.js",
   "scripts": {
