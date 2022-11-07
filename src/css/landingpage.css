@@ -1,25 +1,30 @@
 @import url(reset.css);
 
-.search{
+body{
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+
+    background: #FFFFFF;
+}
+.search_bar{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #7C9473;
-    height: 40px;
-    padding: 10px;
-    border-radius: 40px;
+    width: 621px;
+    height: 75px;
+    left: 409px;
+    top: 59px;
+    background: #7C9473;
+    border-radius: 30px;
 }
 .search_btn{
-    color: #E8EAE6;
-    float: right;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color:#7C9473;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    width: 32px;
+    height: 38px;
+    left: 550px;
+    top: 17px;
+    outline: none;
+    border: none;
+    background: none;
 }
 .search_txt{
     float: left;
@@ -28,10 +33,38 @@
     border: none;
     outline: none;
     color: #E8EAE6;
-    font-size: 15px;
-    line-height: 40px;
-    width: 500px;
-    
+    font-size: 20px;
+    line-height: 75px;
+    width: 630px;
+}
+
+.listview{
+    position: absolute;
+    width: 906px;
+    height: 571px;
+    left: 266px;
+    top: 290px;
+    background: #FFFFFF;
+}
+
+.seriseList{
+    position: absolute;
+    width: 442px;
+    height: 571px;
+    left: 0px;
+    top: 0px;
+    background: #E8EAE6;
+    border-radius: 30px;    
+}
+
+.movieList{
+    position: absolute;
+    width: 442px;
+    height: 571px;
+    left: 464px;
+    top: 0px;
+    background: #E8EAE6;
+    border-radius: 30px;    
 }
 
 /*.search:hover > form .search_txt{
@@ -40,3 +73,23 @@
 .search:hover > form .search_btn{
     background: #65bf97;
 }*/
+
+
+/* UserIcon */
+.initial_userIcon{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 1311px;
+    top: 61px;
+    outline: none;
+    border: none;
+}
+
+/* searchIcon */
+
+
+
+
+
+
