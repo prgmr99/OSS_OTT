@@ -1,0 +1,44 @@
+/* SignIn_bg */
+
+.login__content{
+    position: absolute;
+    width: 500px;
+    height: 571px;
+    left: 470px;
+    top: 242px;
+    background: #CFDAC8;
+    border-radius: 30px;
+}
+
+.login__title{
+position: absolute;
+width: 117px;
+height: 57px;
+left: 661px;
+top: 293px;
+
+font-family: 'Neuton';
+font-style: normal;
+font-weight: 400;
+font-size: 45px;
+line-height: 57px;
+
+color: #000000;
+}
+
+.login__box{
+    /* input_box */
+position: absolute;
+width: 420px;
+height: 65px;
+left: 506px;
+top: 442px;
+
+background: #E8EAE6;
+border-radius: 20px;
+}
+
+
+.login__signin login__signin--signup{
+    font: 'Neuton';
+}
