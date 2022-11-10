@@ -8,19 +8,19 @@
     <link rel="stylesheet" href="../css/day11.css">
 </head>
 <body>
-    <section>
-        <form action="https://namu.wiki/Go">
-            <div class="search">
-                <input type="text" name="q" value="">
-                <button type="submit">검색</button>
-            </div>
-        </form>
-    </section>
-    <hr/>
-    <h3>인기 컨텐츠</h3>
-    <!--API list를 불러옴. 시각화 작업 필요.-->
-    <!--<script src="https://api.themoviedb.org/3/movie/popular?api_key=28480f953401db60e553e41284f5f407&language=en-US&page=1"></script>-->
-    <!-- 아래에 파일에서 최근 인기있는 영화들을 불러옴.-->
-    <script src="./fetch3.js"></script> 
+    <div class = "wrap">
+        <main class = "main">
+            <section id = "top_rated">
+
+            </section>
+
+            <section id="favorite">
+                <h2>취향 저격 영화</h2>
+                <div>
+                  <ul class="favorite-list"></ul>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
