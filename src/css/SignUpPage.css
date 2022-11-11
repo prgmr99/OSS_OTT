@@ -30,7 +30,7 @@
 
 /* Sign In */
 
-.signin_box{
+.input_box{
     border: none;
     outline: none;
 
@@ -47,17 +47,22 @@
     border: none;
 }
 
-.signin_id{
+.input_username{
     left: 506px;
     top: 442px;
 }
 
-.signin_pw{
+.input_id{
+    left: 506px;
+    top: 442px;
+}
+
+.input_pw{
     left: 506px;
     top: 528px;
 }
 
-.signin_btn{
+.signup_btn{
     /* SignIn_btn */
     /*position: absolute;*/
     border: none;
@@ -66,6 +71,9 @@
     height: 80px;
     left: 506px;
     top: 673px;
+
+    margin: 10px 0;
+    padding: 10px;
 
     background: #7C9473;
     border-radius: 20px;
@@ -83,23 +91,7 @@
     font: 'Neuton';
 }
 
-.signin_forgotPW{
-
-    /*position: fixed;*/
-    width: 136px;
-    height: 25px;
-    left: 660px;
-    top: 767px;
-
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 25px;
-
-    /* oss_palette-4 */
-    color: #7C9473;
-}
-
-.signup_question{
+.signin_question{
 
     /*position: absolute;*/
     width: 171px;
@@ -115,7 +107,7 @@
     color: #7C9473;
 }
 
-.signuppage{
+.signinpage{
 
     /*position: absolute;*/
     width: 60px;
