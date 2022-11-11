@@ -1,0 +1,133 @@
+.signin::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: inherit;
+}
+
+/* SignIn_bg */
+
+.signin_form{
+    position: fixed;
+    width: 500px;
+    height: 571px;
+    left: 470px;
+    top: 242px;
+    background: #CFDAC8;
+    border-radius: 30px;
+}
+
+.signin_title{
+    text-align: center;
+    font-size: 45px;
+    line-height: 57px;
+    color: #000000;
+}
+
+/* Sign In */
+
+.signin_box{
+    border: none;
+    outline: none;
+
+    /*position: fixed;*/
+    width: 420px;
+    height: 65px;
+    
+    margin: 10px 0;
+    padding: 10px;
+
+    background: #E8EAE6;
+    border-radius: 20px;
+
+    border: none;
+}
+
+.signin_id{
+    left: 506px;
+    top: 442px;
+}
+
+.signin_pw{
+    left: 506px;
+    top: 528px;
+}
+
+.signin_btn{
+    /* SignIn_btn */
+    /*position: absolute;*/
+    border: none;
+    outline: none;
+    width: 420px;
+    height: 80px;
+    left: 506px;
+    top: 673px;
+
+    background: #7C9473;
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+
+/*.input[type=button]:hover {
+    cursor: pointer;
+    background-color: #CFDAC8;
+    text-decoration: underline;
+  }*/
+  
+.login__signin login__signin--signup{
+    font: 'Neuton';
+}
+
+.signin_forgotPW{
+
+    /*position: fixed;*/
+    width: 136px;
+    height: 25px;
+    left: 660px;
+    top: 767px;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+
+    /* oss_palette-4 */
+    color: #7C9473;
+}
+
+.signup_question{
+
+    /*position: absolute;*/
+    width: 171px;
+    height: 25px;
+    left: 591px;
+    top: 737px;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+
+/* oss_palette-4 */
+    color: #7C9473;
+}
+
+.signuppage{
+
+    /*position: absolute;*/
+    width: 60px;
+    height: 25px;
+    left: 778px;
+    top: 737px;
+
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+
+/* oss_palette-4 */
+    color: #7C9473;
+}
