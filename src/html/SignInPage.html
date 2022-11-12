@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="../css/SignInPage.css">
-    <SCRIPT src="js/login_function.js"></SCRIPT>
+    <SCRIPT defer src="../js/signInAndsignUp/login_function.js"></SCRIPT>
 </head>
 <body>
 <div class="signin">
@@ -16,9 +16,9 @@
   <div class="signin_form">
     <form action="" class="signin_register" id="signin_id">
       <h1 class="signin_title text-center">Sign In</h1>
-      <input type="text" placeholder="ID" class="input_box input_id">
+      <input type="text" placeholder="ID" id='id' class="input_box input_id">
       <p class="error_message error_msg_id"></p>
-      <input type="password" placeholder="Password" class="input_box input_pw">
+      <input type="password" placeholder="Password" id='pw' class="input_box input_pw">
       <p class="error_message error_msg_pw"></p>
       <input type="button" class="signin_btn" value="Sign In"/> 
       <br>
