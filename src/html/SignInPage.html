@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="../css/SignInPage.css">
-    <SCRIPT defer src="../js/signInAndsignUp/login_function.js"></SCRIPT>
+    <SCRIPT defer src="../js/signInAndsignUp/firebase.js"></SCRIPT>
 </head>
 <body>
 <div class="signin">
@@ -20,12 +20,12 @@
       <p class="error_message error_msg_id"></p>
       <input type="password" placeholder="Password" id='pw' class="input_box input_pw">
       <p class="error_message error_msg_pw"></p>
-      <input type="button" class="signin_btn" value="Sign In"/> 
+      <input type="button" class="signin_btn" id='signInBtn' value="Sign In"/> 
       <br>
       
 
 
-      <!--회원가입-->
+      <!--회원가입--> 
       <div class="signup">
         <span class="signup_question">Don't have an account?</span>
         <a href="SignUpPage.html" class="signuppage">Sign Up</a>
@@ -36,9 +36,6 @@
     </form>
 
   </div>
-</div>
-</div>
-  <script src="./login_function.js"></script>
 </div>
 </body>
 </html>

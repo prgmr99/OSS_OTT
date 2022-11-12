@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../css/SignUpPage.css">
+</head>
+<body>
+<div class="signup">
+  <div class="logoimg">
+    <a href="./LandingPage.html"><img src=""></a>
+  </div>
+  <div class="signup_form">
+    <form action="" class="signup_register" id="signup_id">
+     
+      <h1 class="signup_title text-center">Create Account</h1>
+       <!--user name 입력-->
+      <input type="text" placeholder="Username" id="name" class="input_box input_username">
+      <p class="error_message error_msg_id"></p> 
+      <!--id 입력-->
+      <input type="text" placeholder="Id" id="id" class="input_box input_id">
+      <p class="error_message error_msg_pw"></p>
+      <!--pw 입력-->
+      <input type="password" placeholder="Password" id="pw" class="input_box in[ut_pw">
+      <br>
+      <!--sign up button-->
+      <input type="button" class="signup_btn" id="signUpBtn" value="Sign Up"/> 
+      <br>
+      
+
+
+      <!--로그인페이지-->
+      <div class="signin">
+        <span class="signin_question">Have an account?</span>
+        <a href="SignInPage.html" class="signinpage">Sign In</a>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+</body>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+  import { getAnalytics, set, ref } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.14.0/firebase/auth";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+  apiKey: "AIzaSyDpPAcdVQmUoLwiXTEO_6PRuzloKDjYX3A",
+  authDomain: "auth-test-web-1-4ae93.firebaseapp.com",
+  databaseURL: "https://auth-test-web-1-4ae93-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "auth-test-web-1-4ae93",
+  storageBucket: "auth-test-web-1-4ae93.appspot.com",
+  messagingSenderId: "977888738182",
+  appId: "1:977888738182:web:98e6f6f6a04f0089914a07",
+  measurementId: "G-6NFEXG2TZW"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const auth = getAuth();
+
+  const signUp = document.getElementById("signUpBtn");
+  const signIn = document.getElementById("signInBtn");
+
+  signUp.addEventListener('click', (e) => {
+      const email = document.getElementById('id').value;
+      const password = document.getElementById('pw').value;
+      const username = document.getElementById('name').value;
+      
+      createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+              // Signed in 
+              const user = userCredential.user;
+              set(ref(analytics, 'users/' + user.uid), {
+                  username: username,
+                  email: email,
+
+              });
+              alert('user created!');
+          })
+          .catch((error) => {
+              const errorCode = error.code;
+              const errorMessage = error.message; 
+
+              alert('errorMessage');
+      });
+  });
+</script>
+</html>

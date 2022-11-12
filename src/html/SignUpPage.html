@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="../css/SignUpPage.css">
-    <SCRIPT defer src="../js/signInAndsignUp/login_function.js"></SCRIPT>
+    <script type="module" defer src="../js/signInAndsignUp/firebase.js"></script>
 </head>
 <body>
 <div class="signup">
@@ -18,7 +18,7 @@
      
       <h1 class="signup_title text-center">Create Account</h1>
        <!--user name 입력-->
-      <input type="text" placeholder="Username" class="input_box input_username">
+      <input type="text" placeholder="Username" id="name" class="input_box input_username">
       <p class="error_message error_msg_id"></p> 
       <!--id 입력-->
       <input type="text" placeholder="Id" id="id" class="input_box input_id">
@@ -27,7 +27,7 @@
       <input type="password" placeholder="Password" id="pw" class="input_box in[ut_pw">
       <br>
       <!--sign up button-->
-      <input type="button" class="signup_btn" value="Sign Up"/> 
+      <input type="button" class="signup_btn" id="signUpBtn" value="Sign Up"/> 
       <br>
       
 
