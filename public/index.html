@@ -34,7 +34,7 @@
       <!--로그인페이지-->
       <div class="signin">
         <span class="signin_question">Have an account?</span>
-        <a href="SignInPage.html" class="signinpage">Sign In</a>
+        <a href="./signIn.html" class="signinpage">Sign In</a>
       </div>
 
     </form>
@@ -44,7 +44,7 @@
 </body>
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
+  import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
   import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -64,33 +64,30 @@
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+  const database = getDatabase(app);
   const auth = getAuth();
 
-  const signUp = document.getElementById("signUpBtn");
-  const signIn = document.getElementById("signInBtn");
+  signUpBtn.addEventListener('click', (e) => {
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var username = document.getElementById('username').value;
+    
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        set(ref(database, 'users/' + user.uid), {
+            username: username,
+            email: email
+        })
+        alert('user created!');
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message; 
 
-  signUp.addEventListener('click', (e) => {
-      var email = document.getElementById('email').value;
-      var password = document.getElementById('password').value;
-      var username = document.getElementById('username').value;
-      
-      createUserWithEmailAndPassword(auth, email, password)
-          .then((userCredential) => {
-              // Signed in 
-              const user = userCredential.user;
-              set(ref(analytics, 'users/' + user.uid), {
-                  username: username,
-                  email: email
-              })
-              alert('user created!');
-          })
-          .catch((error) => {
-              const errorCode = error.code;
-              const errorMessage = error.message; 
-
-              alert('errorMessage');
-      });
+        alert(errorMessage);
+      })
   });
 </script>
 </html>
