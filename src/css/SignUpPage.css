@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Neuton:wght@200;400&family=Open+Sans&family=PT+Serif&display=swap');
+
 .signup::before {
     content: '';
     position: absolute;
@@ -19,9 +21,12 @@
     top: 242px;
     background: #CFDAC8;
     border-radius: 30px;
+
+   
 }
 
 .signup_title{
+    font-family: 'Neuton', serif;
     text-align: center;
     font-size: 45px;
     line-height: 57px;
@@ -45,6 +50,10 @@
     border-radius: 20px;
 
     border: none;
+    
+
+    font-family: 'Neuton', serif;
+    font-size: 20px;
 }
 
 .input_username{
@@ -79,6 +88,9 @@
     border-radius: 20px;
 
     cursor: pointer;
+
+    font-family: 'Neuton', serif;
+    font-size: 20px;
 }
 
 /*.input[type=button]:hover {
@@ -99,6 +111,7 @@
     left: 591px;
     top: 737px;
 
+    font-family: 'Neuton', serif;
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;
@@ -115,7 +128,7 @@
     left: 778px;
     top: 737px;
 
-
+    font-family: 'Neuton', serif;
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;

@@ -1,4 +1,6 @@
-.signup::before {
+@import url('https://fonts.googleapis.com/css2?family=Neuton:wght@200;400&family=Open+Sans&family=PT+Serif&display=swap');
+
+.signin::before {
     content: '';
     position: absolute;
     top: 0;
@@ -11,66 +13,85 @@
 
 /* SignIn_bg */
 
-.signup_form{
-    position: fixed;
+.signin_form{
+    position: relative;
     width: 500px;
     height: 571px;
-    left: 470px;
-    top: 242px;
+   
     background: #CFDAC8;
     border-radius: 30px;
 }
 
-.signup_title{
+.signin_title{
+    font-family: 'Neuton', serif;
     text-align: center;
     font-size: 45px;
     line-height: 57px;
     color: #000000;
+
+    padding: 20px 0;
 }
 
 /* Sign In */
 
-.signin_box{
+.input_box{
     border: none;
     outline: none;
 
-    /*position: fixed;*/
-    width: 420px;
     height: 65px;
     
-    margin: 10px 0;
-    padding: 10px;
+    box-sizing: border-box;
+    width:85%;
+    height: 65px;
+    padding: 5px;
+    align-self: center;
 
     background: #E8EAE6;
     border-radius: 20px;
 
     border: none;
+
+    /*font*/
+    font-family: 'Neuton', serif;
+    font-size: 20px;
 }
 
-.signin_id{
+.error_message{
+    margin: 10px;
+}
+
+.input_id{
     left: 506px;
     top: 442px;
 }
 
-.signin_pw{
+.input_pw{
     left: 506px;
     top: 528px;
 }
 
-.signin_btn{
+.signin_form .signin_btn{
     /* SignIn_btn */
     /*position: absolute;*/
     border: none;
     outline: none;
-    width: 420px;
+    /*width: 420px;*/
     height: 80px;
     left: 506px;
     top: 673px;
+
+    box-sizing: border-box;
+    width:85%;
+    padding: 5px;
+    
+
 
     background: #7C9473;
     border-radius: 20px;
 
     cursor: pointer;
+    font-family: 'Neuton', serif;
+    font-size: 20px;
 }
 
 /*.input[type=button]:hover {
@@ -83,8 +104,12 @@
     font: 'Neuton';
 }
 
-.signin_forgotPW{
+.signin_forgot{
+    text-align: center;
+}
 
+.signin_forgotPW{
+    font-family: 'Neuton', serif;
     /*position: fixed;*/
     width: 136px;
     height: 25px;
@@ -94,13 +119,17 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;
+    text-align: center;
 
     /* oss_palette-4 */
     color: #7C9473;
 }
 
+.signup{
+    text-align: center;
+}
 .signup_question{
-
+    font-family: 'Neuton', serif;
     /*position: absolute;*/
     width: 171px;
     height: 25px;
@@ -110,13 +139,14 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;
+    text-align: center;
 
 /* oss_palette-4 */
     color: #7C9473;
 }
 
 .signuppage{
-
+    font-family: 'Neuton', serif;
     /*position: absolute;*/
     width: 60px;
     height: 25px;
