@@ -71,7 +71,13 @@
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
     var username = document.getElementById('username').value;
-    
+    var favorites = [];
+    //var favorites2 = JSON.stringify(favorites);
+    const obj_user = {
+      name : username,
+      fav : favorites
+    }
+    const objString = JSON.stringify(obj_user);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in 
@@ -88,6 +94,7 @@
 
         alert(errorMessage);
       })
+    localStorage.setItem('User', objString);
   });
 </script>
 </html>
