@@ -12,9 +12,16 @@
 }
 
 /* SignIn_bg */
+.signin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
 
 .signin_form{
-    position: relative;
+   
     width: 500px;
     height: 571px;
    
@@ -34,22 +41,21 @@
 
 /* Sign In */
 
+
 .input_box{
     border: none;
     outline: none;
-
-    height: 65px;
     
     box-sizing: border-box;
-    width:85%;
+    width: 90%;
     height: 65px;
-    padding: 5px;
-    align-self: center;
+    padding: 10px;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    
 
     background: #E8EAE6;
     border-radius: 20px;
-
-    border: none;
 
     /*font*/
     font-family: 'Neuton', serif;
@@ -75,15 +81,15 @@
     /*position: absolute;*/
     border: none;
     outline: none;
-    /*width: 420px;*/
+    width:90%;
     height: 80px;
     left: 506px;
     top: 673px;
 
     box-sizing: border-box;
-    width:85%;
-    padding: 5px;
-    
+    padding: 10px;
+    margin-left: 25px;
+    margin-bottom: 10px;
 
 
     background: #7C9473;
@@ -104,7 +110,7 @@
     font: 'Neuton';
 }
 
-.signin_forgot{
+.forgot{
     text-align: center;
 }
 

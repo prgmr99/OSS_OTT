@@ -12,17 +12,19 @@
 }
 
 /* SignIn_bg */
+.signup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
-.signup_form{
-    position: fixed;
+.signup_form{ 
     width: 500px;
     height: 571px;
-    left: 470px;
-    top: 242px;
+    
     background: #CFDAC8;
     border-radius: 30px;
-
-   
 }
 
 .signup_title{
@@ -31,25 +33,27 @@
     font-size: 45px;
     line-height: 57px;
     color: #000000;
+
+    padding: 20px 0;
 }
 
 /* Sign In */
 
 .input_box{
-    border: none;
-    outline: none;
-
     /*position: fixed;*/
-    width: 420px;
+    width: 90%;
     height: 65px;
     
-    margin: 10px 0;
-    padding: 10px;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    padding: 20px;
 
+    box-sizing: border-box;
     background: #E8EAE6;
     border-radius: 20px;
 
     border: none;
+    outline: none;
     
 
     font-family: 'Neuton', serif;
@@ -76,14 +80,16 @@
     /*position: absolute;*/
     border: none;
     outline: none;
-    width: 420px;
+    width: 90%;
     height: 80px;
     left: 506px;
     top: 673px;
 
-    margin: 10px 0;
+    margin-left: 25px;
+    margin-bottom: 10px;
     padding: 10px;
 
+    box-sizing: border-box;
     background: #7C9473;
     border-radius: 20px;
 
@@ -103,6 +109,9 @@
     font: 'Neuton';
 }
 
+.signin{
+    text-align: center;
+}
 .signin_question{
 
     /*position: absolute;*/
