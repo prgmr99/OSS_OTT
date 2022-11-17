@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="../src/css/SignUpPage.css">
+    <link rel="stylesheet" href="../../src/css/SignUpPage.css">
 </head>
 <body>
 <div class="signup">
   <div class="logoimg">
-    <a href="./LandingPage.html"><img src=""></a>
+    <a href="../../src/LandingPage.html"><img src=""></a>
   </div>
   <div class="signup_form">
     <form action="" class="signup_register">
@@ -71,11 +71,14 @@
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
     var username = document.getElementById('username').value;
-    var favorites = [];
-    //var favorites2 = JSON.stringify(favorites);
+    var favorites_genre = [];
+    var movies = [];
+    
+    // 사용자 객체 -> localStorage에 저장
     const obj_user = {
       name : username,
-      fav : favorites
+      fav : favorites_genre,
+      mv : movies
     }
     const objString = JSON.stringify(obj_user);
     createUserWithEmailAndPassword(auth, email, password)
@@ -96,5 +99,6 @@
       })
     localStorage.setItem('User', objString);
   });
+  export {username, favorites_genre, movies}; // export로 선언
 </script>
 </html>
