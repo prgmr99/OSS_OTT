@@ -6,19 +6,24 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <link rel="stylesheet" href="../css/LandingPage.css" />
     <title>OTT_Library</title>
+    <script defer src="../js/main/landingpage.js"></script>
 </head>
 <body>
-    <form action="https://namu.wiki/Go">
+    <form class="search_form">
         <div class="search_bar">
-            <input class="search_txt" type="text" name="q" value="">
+            <input class="search_txt" type="text" name="keyword" value="">
             <button class="search_btn" type="submit">
                 <img src="../image/searchIcon.svg" alt="submit_btn">
             </button>
         </div>
+        <div class="result">
+            <ul class="result_contents">
+            </ul>
+        </div>
     </form>
     <div class="listview">
-        <div class="seriseList">
-            serise list
+        <div class="seriesList">
+            series list
         </div>
         <div class="movieList">
             movie list
