@@ -1,4 +1,4 @@
-import {username, favorites_genre, movies} from './signUp.html';
+import { movies, obj_user } from './signIn.js';
 const api_key = '6c616e9a21c6e51d1191f6fc4f2d11c4';
 const $search_form = document.querySelector('.search_form');
 const $search_txt = document.querySelector('.search_txt');
@@ -20,7 +20,10 @@ const render = async () => {
             `https://api.themoviedb.org/3/search/multi?api_key=${api_key}&language=ko-KR&query=${$search_txt.value}&page=1&include_adult=false&region=KR`
         );
         const { results } = await resContent.json();
-        localStorage.getItem('movies');
+        movies.push($search_txt.value);
+        const movieString = JSON.stringify(obj_user.mv);
+        localStorage.setItem(obj_user.mv, movieString);
+        
         results.forEach(content => {
             const $li = document.createElement('li');
             $li.id = content.id;
