@@ -1,4 +1,3 @@
-import { movies, obj_user } from './signIn.js';
 const api_key = '6c616e9a21c6e51d1191f6fc4f2d11c4';
 const $search_form = document.querySelector('.search_form');
 const $search_txt = document.querySelector('.search_txt');
@@ -6,7 +5,7 @@ const $result_contents = document.querySelector('.result_contents');
 const $seriesList = document.querySelector('.seriesList');
 const $movieList = document.querySelector('.movieList');
 const $fragment = document.createDocumentFragment();
-
+const movies = [];
 $search_form.onsubmit = e => {
     e.preventDefault();
     $result_contents.innerHTML = '';
@@ -21,9 +20,10 @@ const render = async () => {
         );
         const { results } = await resContent.json();
         movies.push($search_txt.value);
-        const movieString = JSON.stringify(obj_user.mv);
-        localStorage.setItem(obj_user.mv, movieString);
-        
+        const movieString = JSON.stringify(movies);
+        localStorage.setItem(movies, movieString);
+        localStorage.getItem(obj_user);
+        console.log(obj_user);
         results.forEach(content => {
             const $li = document.createElement('li');
             $li.id = content.id;

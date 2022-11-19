@@ -1,4 +1,4 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+/*import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import { getDatabase, ref, update } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -22,18 +22,14 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth();
 
-function goUrl() {
-    let link = '../html/LandingPage.html';
-    location.href = link;
-}
+
 
 export let email;
 export let movies;
 export let obj_user;
 
-const signInBtn = document.getElementById('signInBtn').value;
-console.log(signInBtn);
-signInBtn.addEventListener('click', (e) => {
+let signInbtn = document.getElementById('signInBtn')
+signInbtn.addEventListener('click', (e) => {
     email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     movies = [];
@@ -54,7 +50,6 @@ signInBtn.addEventListener('click', (e) => {
         alert('User Sign In!');
         // localStorage에 user : email 값 추가.
         localStorage.setItem('obj_user', JSON.stringify(obj_user));
-        goUrl();
     })
     .catch((error) => {
         const errorCode = error.code;
@@ -63,6 +58,11 @@ signInBtn.addEventListener('click', (e) => {
         alert(errorMessage);
     })
 });
+/*function goUrl() {
+    let link = '../html/LandingPage.html';
+    location.href = link;
+}
+goUrl();*/
 
 
 
