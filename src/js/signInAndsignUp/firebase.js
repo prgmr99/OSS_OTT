@@ -50,7 +50,7 @@ signUp.addEventListener('click', (e) => {
     });
 });
 
-signIn.addEventListener('click', (e) => {
+/*signIn.addEventListener('click', (e) => {
     const email = document.getElementById('id').value;
     const password = document.getElementById('pw').value;
     const username = document.getElementById('name').value;
@@ -67,7 +67,7 @@ signIn.addEventListener('click', (e) => {
 
             alert('errorMessage');
         });
-})
+})*/
 /**const signup = document.getElementById("signUpBtn");
 const signin = document.getElementById("signInBtn");
 
