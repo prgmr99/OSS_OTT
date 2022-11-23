@@ -12,7 +12,7 @@ $search_form.onsubmit = e => {
     console.log($search_form.querySelector('input').value);
     render();
 };
-
+a
 const render = async () => {
     try {
         const resContent = await fetch(          

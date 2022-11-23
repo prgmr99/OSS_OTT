@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-    <link rel="stylesheet" href="../../src/css/LandingPage.css" />
+    <link rel="stylesheet" href="../../src/css/landingpage.css" />
     <title>OTT_Library</title>
 </head>
 <body>
@@ -12,27 +12,41 @@
     <form class="search_form">
         <div class="search_bar">
             <input class="search_txt" type="text" name="keyword" value="">
-            <button class="search_btn" type="submit">
+            <button class="search_btn" type="submit" id="resultpopup">
                 <img src="../../src/image/searchIcon.svg" alt="submit_btn">
+                <label for="resultpopup"></label>
             </button>
         </div>
-        <div class="result">
-            <ul class="result_contents">
-            </ul>
+        <div id="layer_bg">
+            <div class="result" id="popup">
+                <h3>Result
+                    <label for="resultpopup">X</label>
+                </h3>
+                <ul class="result_contents">
+                </ul>
+            </div>
         </div>
     </form>
-    <div class="listview">
-        <div class="seriesList">
-            series list
-        </div>
-        <div class="movieList">
-            movie list
-        </div>
-    </div>
-    <a class="initial_userIcon" href="./SignInPage.html">
+    <main class="main">
+        <section id="seriestoplist">
+            <h2>Series TOP LIST</h>
+            <div>
+                <ul class="top10-serieslist"></ul>
+            </div>
+        </section>
+        <section id="movietoplist">
+            <div class="movieList">
+                <h2>Movie TOP LIST</h2>
+                <ul class="top10-movielist"></ul>
+            </div>
+        </section>
+    </main>
+    <a class="initial_userIcon" href="../../src/css/SignInPage.css">
         <img src="../../src/image/UserIcon.svg" alt="userIcon" class="userIcon">
     </a>
 </body>
+
+<!--js-->
 <script type="module">
     const api_key = '6c616e9a21c6e51d1191f6fc4f2d11c4';
     const $search_form = document.querySelector('.search_form');
@@ -48,6 +62,8 @@
         console.log($search_form.querySelector('input').value);
         render();
     };
+
+    //moive list
     const getMovieList = async() => {
         try {
             const getMovie = await fetch(
@@ -78,7 +94,9 @@
             console.log('[ERROR]' + err);
         }
     }
-    getMovieList();
+    //getMovieList();
+
+    //series list
     const getSeriesList = async() => {
         try {
             const getSeries = await fetch(
@@ -109,7 +127,9 @@
             console.log('[ERROR]' + err);
         }
     }
-    getSeriesList();
+    //getSeriesList();
+
+    //검색 결과
     const render = async () => {
         try {
             const resContent = await fetch(          
@@ -133,10 +153,10 @@
                 } else {
                     $img.src = `https://image.tmdb.org/t/p/w500/${content.poster_path}`;
                 }
-                const textNode = document.createTextNode(content.title);
+                const textnode = document.createTextNode(content.title);
                 
                 $a.append($img);
-                $a.append(textNode);
+                $a.append(textnode);
                 $li.append($a);
                 $fragment.append($li);
                 $result_contents.append($fragment);
