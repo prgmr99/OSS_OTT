@@ -8,46 +8,56 @@ body{
     flex-direction: column;
     background: #FFFFFF;
 }
-.search_bar{
-    position: absolute;
-    width: 50%;
-    height: 75px;
-    left: 20%;
-    top: 8%;
-    background: #7C9473;
-    border-radius: 30px;
+
+.header_nav {
+    display: flex;
+    padding: 20px 0;
+
+    right: 0;
+    top: 15%;
 }
-.search_btn{
+  
+.header_nav li {
+    float: left;
+    margin: 10px 22px 0 0;
+}  
+
+/*search Button*/
+a.search_btn{
     position: absolute;
-    width: 32px;
-    height: 38px;
-    left: 92%;
-    top: 20%;
+    width: 60px;
+    height: 60px;
+
     outline: none;
     border: none;
-    background: none;
     border-radius: 20px;
+    background-color: #7C9473;
 }
 
-.search_btn:active{
+a.search_btn > img{
+    margin: 11px;
+}
+
+a.search_btn:active{
     border: #E8EAE6;
     box-shadow: #E8EAE6;
 }
 
-.search_txt{
-    float: left;
-    padding: 3px;
-    margin-left: 5px;
-    background: none;
-    border: none;
+/* UserIcon */
+a.initial_userIcon{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 90%;
+    top: 8%;
     outline: none;
-    color: #E8EAE6;
-    font-size: 20px;
-    line-height: 75px;
-    width: 90%;
+    border: none;
 }
 
-.main{
+
+
+/*main movie, series list*/
+main{
     position: absolute;
     width: 906px;
     height: 571px;
@@ -56,17 +66,17 @@ body{
     background: #FFFFFF;
 }
 
-#seriestoplist{
+.seriesResult{
     position: absolute;
     width: 442px;
     height: 571px;
     left: 0px;
     top: 0px;
     background: #E8EAE6;
-    border-radius: 30px;    
+    border-radius: 30px;
 }
 
-#movietoplist{
+.movieResult{
     position: absolute;
     width: 442px;
     height: 571px;
@@ -85,16 +95,9 @@ h2{
     text-align: center;
 }
 
-.main section{
-    position: relative;
-}
+/*movie List, series List*/
 
-.main section div{
-    padding: 20px 0;
-    overflow: hidden;
-}
-
-.main section div ul li{
+main div ul li{
     float: left;
     position: relative;
     list-style-type: none;
@@ -105,7 +108,7 @@ h2{
     transition: all 0.3s ease-in-out;
 }
 
-.main section div ul .li_series a{
+main div ul li a{
     position: absolute;
     font-size: 82px;
     left: 30px;
@@ -114,129 +117,21 @@ h2{
     text-shadow: #000 2px 2px 3px;
 }
 
-.main section div ul li a {
-    display: block;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    color: #fff;
-    text-decoration: none;
-}
-  
-.main section div ul li img {
+main div ul li img{
     display: block;
     width: 50%;
     max-height: 100px;
 }
 
 
-/* result view*/
-#resultpopup{
-    display: none;
-}
-
-#resultpopup + label{
-    display:inline-block;
-    padding: 7px 14px;
-    background:#333;
-    color:#fff;
-}
-
-#layer_bg{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.5);
-}
-
-#layer_bg > #popup{
-    position: absolute;
-    width: 906px;
-    height: 568px;
-    left: 22%;
-    top: 155px;
-
-    background: #E8EAE6;
-    border-radius: 30px;
-}
-#layer_bg > #popup > h3{
-    padding: 5px;
-    margin: 5px;
-    font-family: 'Neuton', serif;
-}
-#layer_bg > #popup > h3 > label{
-    float: right;
-}
-
-.overlay{
-    display: none;
-    z-index: 100;
-    background-color: rgba(0, 0, 0, 0.7);
-    visibility: hidden;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.result_contents ul li{
-    width: 866px;
-    height: 150px;
-    margin: 10px;
-    padding: 5px;
-}
-
-.result_contents li a {
-    display: block;
-    margin: 10px;
-    padding: 10px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-
-    font-family: 'Neuton', serif;
-    font-size: 35px;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-}
-
-.result_contents li a span{
-    margin: 10px;
-    padding: 10px;
-
-    float: center;
-}
-
-.result_contents li a img{
-    width: 120px;
-    height: 150px;
-    left: 5%;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.result_contents li a img:hover{
+main div ul li img:hover{
     transform: scale(1.15);
 }
 
 
 
 
-/* UserIcon */
-.initial_userIcon{
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    left: 90%;
-    top: 8%;
-    outline: none;
-    border: none;
-}
 
-/* searchIcon */
 
 
 

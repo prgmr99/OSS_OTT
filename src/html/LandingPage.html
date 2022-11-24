@@ -6,46 +6,124 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <link rel="stylesheet" href="../css/landingpage.css" />
     <title>OTT_Library</title>
-    <script defer src="../js/main/landingpage.js"></script>
+    <!--<script defer src="../js/main/landingpage.js"></script>-->
 </head>
 <body>
-    <form class="search_form">
-        <div class="search_bar">
-            <input class="search_txt" type="text" name="keyword" value="" placeholder="검색어를 입력하세요!">
-            <button class="search_btn" type="submit">
-                <img src="../image/searchIcon.svg" alt="submit_btn">
-            </button>
-        </div>
-        <div class="result">
-            <ul class="result_contents">
+    <nav class="header_nav">
+        <ul>
+            <li>
+                <a href="./searchPage.html" class="search_btn">
+                    <img src="../image/searchIcon.svg" alt="submit_btn">
+                </a>
+            </li>
+            <li>
+                <a class="initial_userIcon" href="./signIn.html">
+                    <img src="../image/UserIcon.svg" alt="userIcon" class="userIcon">
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main class="result">
+        <div class="seriesResult">
+            <h2>Series List - TOP 10</h2>
+            <ul class="seriesList">
+                <li class="li_movies"></li>
             </ul>
         </div>
-        <div class ="popup">    
-            <div class="result">
-                <ul class="result_contents">
-                    <div class="result_img"></div>
-                    <div class="result_info">
-                        <h2 class="result_title"></h2>
-                        <span class="result_vote">평점: <span class="vote"></span></span>
-                        <i>
-                            <button class="add_btn">ADD</button>
-                        </i>
-                    </div>
-                </ul>
-            </div>
+        <div class="movieResult">
+            <h2>Movie List - TOP 10</h2>
+            <ul class="movieList">
+                <li class="li_series"></li>
+            </ul>
         </div>
-    </form>
-    <div class="overlay"></div>
-    <div class="listview">
-        <div class="seriesList">
-            series list
-        </div>
-        <div class="movieList">
-            movie list
-        </div>
-    </div>
-    <a class="initial_userIcon" href="./signIn.html">
-        <img src="../image/UserIcon.svg" alt="userIcon" class="userIcon">
-    </a>
+    </main>
 </body>
+
+
+<!--JS-->
+<script type="module">
+    const api_key = '6c616e9a21c6e51d1191f6fc4f2d11c4';
+    //const $search_form = document.querySelector('.search_form');
+    //const $search_txt = document.querySelector('.search_txt');
+    const $movieResult = document.querySelector('movieResult');
+    const $seriesResult = document.querySelector('seriesResult');
+    const $seriesList = document.querySelector('.seriesList');
+    const $movieList = document.querySelector('.movieList');
+    const $fragment = document.createDocumentFragment();
+    const movies = [];
+    $search_form.onsubmit = e => {
+        e.preventDefault();
+        $result_contents.innerHTML = '';
+        console.log($search_form.querySelector('input').value);
+        render();
+    };
+
+    //moive list
+    const getMovieList = async() => {
+        try {
+            const getMovie = await fetch(
+                `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=ko-KR&page=1`
+            );
+            const { result } = await getMovie.json();
+            result.forEach(content => {
+                const $li_movies = document.createElement('li_movies');
+                $li_movies.id = content.id;
+                $li_movies.className = content.media_type;
+                const $a = document.createElement('a');
+                $a.href = '#';
+                const $img = document.createElement('img');
+                if (content.poster_path == null) {
+                    $img.src =  '../image/notready.png';
+                } else {
+                    $img.src = `https://image.tmdb.org/t/p/w500/${content.poster_path}`;
+                }
+                const textNode = document.createTextNode(content.title);
+                
+                $a.append($img);
+                $a.append(textNode);
+                $li_movies.append($a);
+                $fragment.append($li_movies);
+                //$result_contents.append($fragment);
+                $movieList.append($fragment);
+            });
+        } catch (err) {
+            console.log('[ERROR]' + err);
+        }
+    }
+    getMovieList();
+
+    //series list
+    const getSeriesList = async() => {
+        try {
+            const getSeries = await fetch(
+                `https://api.themoviedb.org/3/tv/popular?api_key=${api_key}&language=ko-KR&page=1`
+            );
+            const { result } = await getSeries.json();
+            result.forEach(content => {
+                const $li_series = document.createElement('li_series');
+                $li_series.id = content.id;
+                $li_series.className = content.media_type;
+                const $a = document.createElement('a');
+                $a.href = '#';
+                const $img = document.createElement('img');
+                if (content.poster_path == null) {
+                    $img.src =  '../image/notready.png';
+                } else {
+                    $img.src = `https://image.tmdb.org/t/p/w500/${content.poster_path}`;
+                }
+                const textNode = document.createTextNode(content.title);
+                
+                $a.append($img);
+                $a.append(textNode);
+                $li.append($a);
+                $fragment.append($li_series);
+                //$result_contents.append($fragment);
+                $seriesList.append($fragment);
+            });
+        } catch (err) {
+            console.log('[ERROR]' + err);
+        }
+    }
+    getSeriesList();
+    </script>
 </html>
