@@ -22,48 +22,52 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth();
 
-
-
 export let email;
 export let movies;
 export let obj_user;
 
-email = document.getElementById('email').value;
-let signInbtn = document.getElementById('signInBtn')
-signInbtn.addEventListener('click', (e) => {
-    email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    movies = [];
-    
-    obj_user = {
-        user : email,
-        mv : movies
-    }
-
-    signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        const dt = new Date();
-        update(ref(database, 'users/' + user.uid), {
-            last_login: dt
-        })
-        alert('User Sign In!');
-        // localStorage에 user : email 값 추가.
-        localStorage.setItem('obj_user', JSON.stringify(obj_user));
-    })
-    .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        
-        alert(errorMessage);
-    })
-});
-/*function goUrl() {
+function goUrl() {
     let link = '../html/LandingPage.html';
     location.href = link;
 }
-goUrl();*/
+
+const test1 = function() {
+        email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        movies = [];
+
+        obj_user = {
+            user: email,
+            mv: movies
+        }
+
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            const dt = new Date();
+            update(ref(database, 'users/' + user.uid), {
+                last_login: dt
+            })
+            alert('User Sign In!');
+            // localStorage에 user : email 값 추가.
+            localStorage.setItem('obj_user', JSON.stringify(obj_user));
+            signInbtn.removeEventListener("click", test1);
+            goUrl();
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+            alert(errorMessage);
+        })
+    }
+
+let signInbtn = document.getElementById('signInBtn')
+console.log(signInbtn);
+signInbtn.addEventListener('click', test1, {once: true});
+
+
 
 
 

@@ -35,9 +35,13 @@ var movies;
 exports.movies = movies;
 var obj_user;
 exports.obj_user = obj_user;
-exports.email = email = document.getElementById('email').value;
-var signInbtn = document.getElementById('signInBtn');
-signInbtn.addEventListener('click', function (e) {
+
+function goUrl() {
+  var link = '../html/LandingPage.html';
+  location.href = link;
+}
+
+var test1 = function test1() {
   exports.email = email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
   exports.movies = movies = [];
@@ -55,18 +59,20 @@ signInbtn.addEventListener('click', function (e) {
     alert('User Sign In!'); // localStorage에 user : email 값 추가.
 
     localStorage.setItem('obj_user', JSON.stringify(obj_user));
+    signInbtn.removeEventListener("click", test1);
+    goUrl();
   })["catch"](function (error) {
     var errorCode = error.code;
     var errorMessage = error.message;
     alert(errorMessage);
   });
-});
-/*function goUrl() {
-    let link = '../html/LandingPage.html';
-    location.href = link;
-}
-goUrl();*/
+};
 
+var signInbtn = document.getElementById('signInBtn');
+console.log(signInbtn);
+signInbtn.addEventListener('click', test1, {
+  once: true
+});
 /*
 const user = auth.currentUser;
 onAuthStateChanged(auth, (user) => {
