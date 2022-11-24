@@ -34,6 +34,7 @@
     </a>
 </body>
 <script type="module">
+    import { email, obj_users, movies } from "../js/signIn.js";
     const api_key = '6c616e9a21c6e51d1191f6fc4f2d11c4';
     const $search_form = document.querySelector('.search_form');
     const $search_txt = document.querySelector('.search_txt');
@@ -42,6 +43,7 @@
     const $movieList = document.querySelector('.movieList');
     const $fragment = document.createDocumentFragment();
     const movies = [];
+    console.log(email);
     $search_form.onsubmit = e => {
         e.preventDefault();
         $result_contents.innerHTML = '';

@@ -1,4 +1,4 @@
-/*import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import { getDatabase, ref, update } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -28,6 +28,7 @@ export let email;
 export let movies;
 export let obj_user;
 
+email = document.getElementById('email').value;
 let signInbtn = document.getElementById('signInBtn')
 signInbtn.addEventListener('click', (e) => {
     email = document.getElementById('email').value;
