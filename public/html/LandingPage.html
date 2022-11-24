@@ -1,38 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-        <link rel="stylesheet" href="../../src/css/LandingPage.css" />
-        <title>OTT_Library</title>
-    </head>
-    <body>
-        <input type="hidden" class="signInBtn" id="signInBtn">
-        <div include-html="signIn.html"></div>
-        <form class="search_form">
-            <div class="search_bar">
-                <input class="search_txt" type="text" name="keyword" value="">
-                <button class="search_btn" type="submit">
-                    <img src="../../src/image/searchIcon.svg" alt="submit_btn">
-                </button>
-            </div>
-            <div class="result">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <link rel="stylesheet" href="../../src/css/landingpage.css" />
+    <title>OTT_Library</title>
+</head>
+<body>
+    <input type="hidden" class="signInBtn" id="signInBtn">
+    <div include-html="signIn.html"></div>
+    <form class="search_form">
+        <div class="search_bar">
+            <input class="search_txt" type="text" name="keyword" value="">
+            <button class="search_btn" type="submit" id="resultpopup">
+                <img src="../../src/image/searchIcon.svg" alt="submit_btn">
+                <label for="resultpopup"></label>
+            </button>
+        </div>
+        <div id="layer_bg">
+            <div class="result" id="popup">
+                <h3>Result
+                    <label for="resultpopup">X</label>
+                </h3>
                 <ul class="result_contents">
                 </ul>
             </div>
-        </form>
-        <div class="listview">
-            <div class="seriesList">
-                series list
-            </div>
-            <div class="movieList">
-                movie list
-            </div>
         </div>
-        <a class="initial_userIcon" href="./SignInPage.html">
-            <img src="../../src/image/UserIcon.svg" alt="userIcon" class="userIcon">
-        </a>
-        <script type="module" src="../js/landingpage.js"></script>
-    </body>
+    </form>
+    <main class="main">
+        <section id="seriestoplist">
+            <h2>Series TOP LIST</h>
+            <div>
+                <ul class="top10-serieslist"></ul>
+            </div>
+        </section>
+        <section id="movietoplist">
+            <div class="movieList">
+                <h2>Movie TOP LIST</h2>
+                <ul class="top10-movielist"></ul>
+            </div>
+        </section>
+    </main>
+    <a class="initial_userIcon" href="../../src/css/SignInPage.css">
+        <img src="../../src/image/UserIcon.svg" alt="userIcon" class="userIcon">
+    </a>
+    <script type="module" src="../js/landingpage.js"></script>
+</body>
 </html>

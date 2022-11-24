@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-    <link rel="stylesheet" href="../css/LandingPage.css" />
+    <link rel="stylesheet" href="../css/landingpage.css" />
     <title>OTT_Library</title>
     <script defer src="../js/main/landingpage.js"></script>
 </head>
 <body>
     <form class="search_form">
         <div class="search_bar">
-            <input class="search_txt" type="text" name="keyword" value="">
+            <input class="search_txt" type="text" name="keyword" value="" placeholder="검색어를 입력하세요!">
             <button class="search_btn" type="submit">
                 <img src="../image/searchIcon.svg" alt="submit_btn">
             </button>
@@ -20,7 +20,22 @@
             <ul class="result_contents">
             </ul>
         </div>
+        <div class ="popup">    
+            <div class="result">
+                <ul class="result_contents">
+                    <div class="result_img"></div>
+                    <div class="result_info">
+                        <h2 class="result_title"></h2>
+                        <span class="result_vote">평점: <span class="vote"></span></span>
+                        <i>
+                            <button class="add_btn">ADD</button>
+                        </i>
+                    </div>
+                </ul>
+            </div>
+        </div>
     </form>
+    <div class="overlay"></div>
     <div class="listview">
         <div class="seriesList">
             series list
@@ -29,7 +44,7 @@
             movie list
         </div>
     </div>
-    <a class="initial_userIcon" href="./SignInPage.html">
+    <a class="initial_userIcon" href="./signIn.html">
         <img src="../image/UserIcon.svg" alt="userIcon" class="userIcon">
     </a>
 </body>

@@ -1,18 +1,19 @@
 @import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Neuton:wght@200;400&family=Open+Sans&family=PT+Serif&display=swap');
 
 body{
-    position: relative;
-    width: 1440px;
-    height: 1024px;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     background: #FFFFFF;
 }
 .search_bar{
     position: absolute;
-    width: 621px;
+    width: 50%;
     height: 75px;
-    left: 409px;
-    top: 59px;
+    left: 20%;
+    top: 8%;
     background: #7C9473;
     border-radius: 30px;
 }
@@ -20,34 +21,42 @@ body{
     position: absolute;
     width: 32px;
     height: 38px;
-    left: 550px;
-    top: 17px;
+    left: 92%;
+    top: 20%;
     outline: none;
     border: none;
     background: none;
+    border-radius: 20px;
 }
+
+.search_btn:active{
+    border: #E8EAE6;
+    box-shadow: #E8EAE6;
+}
+
 .search_txt{
     float: left;
-    padding: 0;
+    padding: 3px;
+    margin-left: 5px;
     background: none;
     border: none;
     outline: none;
     color: #E8EAE6;
     font-size: 20px;
     line-height: 75px;
-    width: 630px;
+    width: 90%;
 }
 
-.listview{
+.main{
     position: absolute;
     width: 906px;
     height: 571px;
-    left: 266px;
+    left: 22%;
     top: 290px;
     background: #FFFFFF;
 }
 
-.seriesList{
+#seriestoplist{
     position: absolute;
     width: 442px;
     height: 571px;
@@ -57,22 +66,163 @@ body{
     border-radius: 30px;    
 }
 
-.movieList{
+#movietoplist{
     position: absolute;
     width: 442px;
     height: 571px;
-    left: 464px;
+    left: 50%;
     top: 0px;
     background: #E8EAE6;
     border-radius: 30px;    
 }
 
-/*.search:hover > form .search_txt{
-    width: 200px;
+h2{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Neuton', serif;
+    font-size: 20px;
+    line-height: 6rem;
+    text-align: center;
 }
-.search:hover > form .search_btn{
-    background: #65bf97;
-}*/
+
+.main section{
+    position: relative;
+}
+
+.main section div{
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.main section div ul li{
+    float: left;
+    position: relative;
+    list-style-type: none;
+    text-align: center;
+    font-family: 'Neuton', serif;
+    font-size: 15px;
+    line-height: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+.main section div ul .li_series a{
+    position: absolute;
+    font-size: 82px;
+    left: 30px;
+    bottom: 50px;
+    opacity: 0.9;
+    text-shadow: #000 2px 2px 3px;
+}
+
+.main section div ul li a {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #fff;
+    text-decoration: none;
+}
+  
+.main section div ul li img {
+    display: block;
+    width: 50%;
+    max-height: 100px;
+}
+
+
+/* result view*/
+#resultpopup{
+    display: none;
+}
+
+#resultpopup + label{
+    display:inline-block;
+    padding: 7px 14px;
+    background:#333;
+    color:#fff;
+}
+
+#layer_bg{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+}
+
+#layer_bg > #popup{
+    position: absolute;
+    width: 906px;
+    height: 568px;
+    left: 22%;
+    top: 155px;
+
+    background: #E8EAE6;
+    border-radius: 30px;
+}
+#layer_bg > #popup > h3{
+    padding: 5px;
+    margin: 5px;
+    font-family: 'Neuton', serif;
+}
+#layer_bg > #popup > h3 > label{
+    float: right;
+}
+
+.overlay{
+    display: none;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.result_contents ul li{
+    width: 866px;
+    height: 150px;
+    margin: 10px;
+    padding: 5px;
+}
+
+.result_contents li a {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    font-family: 'Neuton', serif;
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.result_contents li a span{
+    margin: 10px;
+    padding: 10px;
+
+    float: center;
+}
+
+.result_contents li a img{
+    width: 120px;
+    height: 150px;
+    left: 5%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.result_contents li a img:hover{
+    transform: scale(1.15);
+}
+
+
 
 
 /* UserIcon */
@@ -80,8 +230,8 @@ body{
     position: absolute;
     width: 70px;
     height: 70px;
-    left: 1311px;
-    top: 61px;
+    left: 90%;
+    top: 8%;
     outline: none;
     border: none;
 }
