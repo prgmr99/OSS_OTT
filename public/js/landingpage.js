@@ -1,3 +1,8 @@
+import {
+    email,
+    obj_user,
+    movies
+} from "../js/signIn.js";
 const api_key = '6c616e9a21c6e51d1191f6fc4f2d11c4';
 const $search_form = document.querySelector('.search_form');
 const $search_txt = document.querySelector('.search_txt');
@@ -5,25 +10,55 @@ const $result_contents = document.querySelector('.result_contents');
 const $seriesList = document.querySelector('.seriesList');
 const $movieList = document.querySelector('.movieList');
 const $fragment = document.createDocumentFragment();
-const movies = [];
+const signInBtn = document.querySelector('#signInBtn');
+console.log(email);
 $search_form.onsubmit = e => {
     e.preventDefault();
     $result_contents.innerHTML = '';
     console.log($search_form.querySelector('input').value);
     render();
 };
-
-const render = async () => {
+const getMovieList = async () => {
     try {
-        const resContent = await fetch(          
-            `https://api.themoviedb.org/3/search/multi?api_key=${api_key}&language=ko-KR&query=${$search_txt.value}&page=1&include_adult=false&region=KR`
+        const getMovie = await fetch(
+            `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=ko-KR&page=1`
         );
-        const { results } = await resContent.json();
-        movies.push($search_txt.value);
-        const movieString = JSON.stringify(movies);
-        localStorage.setItem(movies, movieString);
-        localStorage.getItem(obj_user);
-        console.log(obj_user);
+        const {
+            results
+        } = await getMovie.json();
+        results.forEach(content => {
+            const $li_series = document.createElement('li_series');
+            $li_series.id = content.id;
+            $li_series.className = content.media_type;
+            const $a = document.createElement('a');
+            $a.href = '#';
+            const $img = document.createElement('img');
+            if (content.poster_path == null) {
+                $img.src = '../image/notready.png';
+            } else {
+                $img.src = `https://image.tmdb.org/t/p/w500/${content.poster_path}`;
+            }
+            const textNode = document.createTextNode(content.title);
+
+            $a.append($img);
+            $a.append(textNode);
+            $li_series.append($a);
+            $fragment.append($li_series);
+            $result_contents.append($fragment);
+        });
+    } catch (err) {
+        console.log('[ERROR]' + err);
+    }
+}
+getMovieList();
+const getSeriesList = async () => {
+    try {
+        const getSeries = await fetch(
+            `https://api.themoviedb.org/3/tv/popular?api_key=${api_key}&language=ko-KR&page=1`
+        );
+        const {
+            results
+        } = await getSeries.json();
         results.forEach(content => {
             const $li = document.createElement('li');
             $li.id = content.id;
@@ -32,12 +67,50 @@ const render = async () => {
             $a.href = '#';
             const $img = document.createElement('img');
             if (content.poster_path == null) {
-                $img.src =  '../image/notready.png';
+                $img.src = '../image/notready.png';
             } else {
                 $img.src = `https://image.tmdb.org/t/p/w500/${content.poster_path}`;
             }
             const textNode = document.createTextNode(content.title);
-            
+
+            $a.append($img);
+            $a.append(textNode);
+            $li.append($a);
+            $fragment.append($li);
+            $result_contents.append($fragment);
+        });
+    } catch (err) {
+        console.log('[ERROR]' + err);
+    }
+}
+getSeriesList();
+const render = async () => {
+    try {
+        const resContent = await fetch(
+            `https://api.themoviedb.org/3/search/multi?api_key=${api_key}&language=ko-KR&query=${$search_txt.value}&page=1&include_adult=false&region=KR`
+        );
+        const {
+            results
+        } = await resContent.json();
+        movies.push($search_txt.value);
+        const movieString = JSON.stringify(movies);
+        localStorage.setItem(movies, movieString);
+        //localStorage.getItem(obj_user);
+        //console.log(obj_user);
+        results.forEach(content => {
+            const $li = document.createElement('li');
+            $li.id = content.id;
+            $li.className = content.media_type;
+            const $a = document.createElement('a');
+            $a.href = '#';
+            const $img = document.createElement('img');
+            if (content.poster_path == null) {
+                $img.src = '../image/notready.png';
+            } else {
+                $img.src = `https://image.tmdb.org/t/p/w500/${content.poster_path}`;
+            }
+            const textNode = document.createTextNode(content.title);
+
             $a.append($img);
             $a.append(textNode);
             $li.append($a);
