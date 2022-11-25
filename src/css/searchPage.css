@@ -10,6 +10,7 @@ body{
     background: #FFFFFF;
 }
 
+/*search bar*/
 .search_bar{
     position: absolute;
     width: 50%;
@@ -51,6 +52,7 @@ body{
     font-size: 20px;
 }
 
+/*sign in page*/
 .initial_userIcon{
     position: absolute;
     width: 70px;
@@ -61,8 +63,24 @@ body{
     border: none;
 }
 
-main{
-    /* searchResult_bx */
+.bookmarkBtn{
+    width: 100px;
+    height: 70px;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+
+    font-family: 'Neuton', serif;
+    font-size: 15px;
+    color:#E8EAE6;
+    text-align: center;
+
+    background-color: #7C9473;
+}
+
+/*search result view*/
+.result{
+   
     position: absolute;
     width: 1247px;
     height: 750px;
@@ -73,33 +91,52 @@ main{
     border-radius: 30px;
 }
 
-.search_form main div ul li {
+.result ul{
+    width: 1247px;
+    height: 750px;
+    overflow: auto;
+    margin: 5px;
+}
+
+.result ul li {
     float: left;
-    position: relative;
-    list-style-type: none;
-    text-align: center;
-    font-family: 'Neuton', serif;
-    font-size: 15px;
-    line-height: 50px;
-    transition: all 0.3s ease-in-out;
-}
-
-.search_form main div ul li a{
-    position: absolute;
-    font-size: 82px;
-    left: 30px;
-    bottom: 50px;
-    opacity: 0.9;
-    text-shadow: #000 2px 2px 3px;
-}
-
-.search_form main div ul li img{
     display: block;
-    width: 50%;
-    max-height: 100px;
+    position: relative;
+    width: 550px;
+    height: 250px;
+    margin: 5px;
+    
+    list-style-type: none;
+}
+
+.result ul li a{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+    align-items: inherit;
+    align-content: inherit;
+    padding-left: 30px;
+    height: 250px;
+
+    text-align: left;
+    font-family: 'Neuton', serif;
+    font-size: 20px;
+    line-height: 15px;
+}
+
+.result ul li a img{
+    float: inherit;
+    display: block;
+    width: 150px;
+    height: 200px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 
-.search_form main div ul li img:hover{
+.result ul li a img:hover{
     transform: scale(1.15);
 }
