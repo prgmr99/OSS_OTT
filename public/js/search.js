@@ -11,7 +11,7 @@ const signInBtn = document.querySelector('#signInBtn');
 //console.log(email);
 let obj = JSON.parse(localStorage.getItem('obj_user'));
 console.log(obj);
-console.log(obj.user);
+//console.log(obj.user);
 
 $search_form.onsubmit = e => {
     e.preventDefault();
@@ -28,10 +28,14 @@ const render = async () => {
         const {
             results
         } = await resContent.json();
-        console.log($search_txt.value);
-        let mvList = JSON.parse(localStorage.getItem('obj_user'));
-        (mvList.mv).push($search_txt.value);
-        localStorage.setItem('obj_user', JSON.stringify(mvList));
+        //console.log($search_txt.value);
+
+        const bmBtn = document.querySelector("#bookMarkBtn");
+        bmBtn.addEventListener('click', () => {
+            let mvList = JSON.parse(localStorage.getItem('obj_user'));
+            (mvList.mv).push($search_txt.value);
+            localStorage.setItem('obj_user', JSON.stringify(mvList));
+        })
         results.forEach(content => {
             const $li = document.createElement('li');
             $li.id = content.id;
