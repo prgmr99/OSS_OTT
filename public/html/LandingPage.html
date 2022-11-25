@@ -10,26 +10,20 @@
 <body>
     <input type="hidden" class="signInBtn" id="signInBtn">
     <div include-html="signIn.html"></div>
-    <form class="search_form">
-        <div class="search_bar">
-            <input class="search_txt" type="text" name="keyword" value="">
-            <button class="search_btn" type="submit" id="resultpopup" >
-                <img src="../../src/image/searchIcon.svg" alt="submit_btn"/>
-                <label for="resultpopup"></label>
-            </button>
-            
-            
-        </div>
-        <div id="layer_bg">
-            <div class="result">
-                <h3>Result
-                    <label for="resultpopup">X</label>
-                </h3>
-                <ul class="result_contents">
-                </ul>
-            </div>
-        </div>
-    </form>
+    <nav class="header_nav">
+        <ul>
+            <li>
+                <a href="./searchPage.html" class="search_btn">
+                    <img src="../../src/image/searchIcon.svg" alt="submit_btn">
+                </a>
+            </li>
+            <li>
+                <a class="initial_userIcon" href="./signIn.html">
+                    <img src="../../src/image/UserIcon.svg" alt="userIcon" class="userIcon">
+                </a>
+            </li>
+        </ul>
+    </nav>
     <main class="main">
         <section id="seriestoplist">
             <h2>Series TOP LIST</h>
@@ -44,9 +38,9 @@
             </div>
         </section>
     </main>
-    <a class="initial_userIcon" href="../../src/css/SignInPage.css">
+    <!--<a class="initial_userIcon" href="../../src/css/SignInPage.css">
         <img src="../../src/image/UserIcon.svg" alt="userIcon" class="userIcon">
-    </a>
+    </a>-->
     <script type="module" src="../js/landingpage.js"></script>
 </body>
 </html>
