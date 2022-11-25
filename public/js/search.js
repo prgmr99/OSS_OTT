@@ -1,3 +1,5 @@
+//import { obj_user } from "./signIn";
+
 const api_key = '6c616e9a21c6e51d1191f6fc4f2d11c4';
 const $search_form = document.querySelector('.search_form');
 const $search_txt = document.querySelector('.search_txt');
@@ -7,10 +9,14 @@ const $movieList = document.querySelector('.movieList');
 const $fragment = document.createDocumentFragment();
 const signInBtn = document.querySelector('#signInBtn');
 //console.log(email);
+let obj = JSON.parse(localStorage.getItem('obj_user'));
+console.log(obj);
+console.log(obj.user);
+
 $search_form.onsubmit = e => {
     e.preventDefault();
     $result_contents.innerHTML = '';
-    console.log($search_form.querySelector('input').value);
+    //console.log($search_form.querySelector('input').value);
     render();
 };
 
@@ -22,11 +28,10 @@ const render = async () => {
         const {
             results
         } = await resContent.json();
-        //.push($search_txt.value);
-        //const movieString = JSON.stringify(movies);
-        //localStorage.setItem(movies, movieString);
-        //localStorage.getItem(obj_user);
-        //console.log(obj_user);
+        console.log($search_txt.value);
+        let mvList = JSON.parse(localStorage.getItem('obj_user'));
+        (mvList.mv).push($search_txt.value);
+        localStorage.setItem('obj_user', JSON.stringify(mvList));
         results.forEach(content => {
             const $li = document.createElement('li');
             $li.id = content.id;
