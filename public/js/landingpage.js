@@ -42,7 +42,7 @@ const getMovieList = async () => {
                 $img.src = `https://image.tmdb.org/t/p/w500/${content.poster_path}`;
             }
             const textNode = document.createTextNode(content.title); // 영화 제목 저장
-
+            
             $a.append($img);
             $a.append(textNode);
             $li_movies.append($a);

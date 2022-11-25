@@ -12,31 +12,27 @@
     <div include-html="signIn.html"></div>
     <form class="search_form">
         <div class="search_bar">
-            <!--<input class="search_txt" type="text" name="keyword" value="">-->
-            <button class="search_btn" type="button" id="resultpopup" onclick="location.href='searchPage.html'">
+            <button class="search_btn" type="button" onclick="location.href='searchPage.html'">
                 <img src="../../src/image/searchIcon.svg"/>
-                <!--<label for="resultpopup"></label>-->
             </button>
         </div>
-        <!--<div id="layer_bg">
-            <div class="result">
-                <h3>Result
-                    <label for="resultpopup">X</label>
-                </h3>
-                <ul class="result_contents">
-                </ul>
-            </div>
-        </div>-->
     </form>
     <main class="main">
         <section id="seriestoplist">
-            <h2>Series TOP LIST</h>
+            <h2>Series TOP LIST</h2>
             <div>
-                <ul class="top10-serieslist"></ul> <!--인기 시리즈 리스트-->
+                <ul class="top10-serieslist">
+                    <!-- <li class='${id}'>
+                        <a href="#">
+                            <img src=""></img>
+                            title
+                        </a>
+                    </li> -->
+                </ul> <!--인기 시리즈 리스트-->
             </div>
         </section>
         <section id="movietoplist">
-            <h2>Moives TOP LIST</h>
+            <h2>Moives TOP LIST</h2>
             <div class="movieList">
                 <ul class="top10-movieslist"></ul> <!--인기 영화 리스트-->
             </div>

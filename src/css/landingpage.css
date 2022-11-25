@@ -23,28 +23,30 @@ body{
 }  
 
 /*search Button*/
-a.search_btn{
+.search_btn{
     position: absolute;
     width: 60px;
     height: 60px;
-
+    top: 8%;
+    left: 45%;
     outline: none;
     border: none;
     border-radius: 20px;
     background-color: #7C9473;
 }
 
-a.search_btn > img{
+.search_btn img{
     margin: 11px;
+    left: 10%;
 }
 
-a.search_btn:active{
+.search_btn:active{
     border: #E8EAE6;
     box-shadow: #E8EAE6;
 }
 
 /* UserIcon */
-a.initial_userIcon{
+.initial_userIcon{
     position: absolute;
     width: 70px;
     height: 70px;
@@ -96,35 +98,51 @@ h2{
 }
 
 /*movie List, series List*/
+main section div ul{
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 420px;
+    height: 466px;
+    overflow: auto;
+}
 
 main section div ul li{
+    width: 420px;
+    height: 130px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
     float: left;
     position: relative;
     list-style-type: none;
-    text-align: center;
-    font-family: 'Neuton', serif;
-    font-size: 15px;
-    line-height: 50px;
-    transition: all 0.3s ease-in-out;
 }
+
 
 main section div ul li a{
-    position: absolute;
-    font-size: 82px;
-    left: 30px;
-    bottom: 50px;
-    opacity: 0.9;
-    text-shadow: #000 2px 2px 3px;
-}
-
-main section div ul li img{
     display: block;
-    width: 50%;
-    max-height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+    align-items: inherit;
+    align-content: inherit;
+    padding-left: 30px;
+
+    text-align: left;
+    font-family: 'Neuton', serif;
+    font-size: 30px;
+    line-height: 20px;
+    text-indent: 10px;
+}
+
+main section div ul li a>img{
+    /*position: absolute;*/
+    /*display: block;*/
+    width: 80px;
+    height: 110px;
 }
 
 
-main section div ul li img:hover{
+main section div ul li a img:hover{
     transform: scale(1.15);
 }
 
