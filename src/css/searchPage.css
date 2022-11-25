@@ -44,6 +44,7 @@ body{
     border: none;
     outline: none;
     border-radius: 30px;
+    padding: 10px;
 
     color:  #E8EAE6;
     text-align: left;
@@ -72,7 +73,7 @@ main{
     border-radius: 30px;
 }
 
-main div ul li {
+.search_form main div ul li {
     float: left;
     position: relative;
     list-style-type: none;
@@ -83,7 +84,7 @@ main div ul li {
     transition: all 0.3s ease-in-out;
 }
 
-main div ul li a{
+.search_form main div ul li a{
     position: absolute;
     font-size: 82px;
     left: 30px;
@@ -92,13 +93,13 @@ main div ul li a{
     text-shadow: #000 2px 2px 3px;
 }
 
-main div ul li img{
+.search_form main div ul li img{
     display: block;
     width: 50%;
     max-height: 100px;
 }
 
 
-main div ul li img:hover{
+.search_form main div ul li img:hover{
     transform: scale(1.15);
 }
