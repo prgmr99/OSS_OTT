@@ -6,9 +6,10 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <link rel="stylesheet" href="../../src/css/searchPage.css" />
     <title>OTT_Library</title>
-    <script defer src="../js/search.js"></script>
+    <script type="module" defer src="../js/search.js"></script>
 </head>
 <body>
+    <input type="hidden" class="signInBtn" id="signInBtn">
     <form class="search_form">
         <div class="search_bar">
             <input class="search_txt" type="text" name="keyword" value="">
@@ -16,12 +17,13 @@
                 <img src="../../src/image/searchIcon.svg" alt="submit_btn">
             </button>
         </div>
-        <main>
-            <div class="result">
-                <ul class="result_content">
-                </ul>
-            </div>
-        </main>
+        <div class="bookmark">
+            <button class="bookmarkBtn" type="button" id="bookMarkBtn">Bookmark</button>
+        </div>
+        <div class="result">
+            <ul class="result_contents">
+            </ul>
+        </div>
     </form>
     <a class="initial_userIcon" href="./SignInPage.html">
         <img src="../../src/image/UserIcon.svg" alt="userIcon" class="userIcon">
