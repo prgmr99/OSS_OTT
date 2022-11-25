@@ -1,0 +1,104 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Neuton:wght@200;400&family=Open+Sans&family=PT+Serif&display=swap');
+
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #FFFFFF;
+}
+
+.search_bar{
+    position: absolute;
+    width: 50%;
+    height: 75px;
+    left: 20%;
+    top: 8%;
+    background: #7C9473;
+    border-radius: 30px;
+}
+
+.search_btn{
+    position: absolute;
+    width: 32px;
+    height: 38px;
+    left: 92%;
+    top: 20%;
+    outline: none;
+    border: none;
+    background: none;
+    border-radius: 20px;
+    background-color: #7C9473;
+}
+
+.search_btn > img{
+    margin: 11px;
+}
+
+.search_txt{
+    width: 100%;
+    height: 75px;
+    background-color: #7C9473;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+
+    color:  #E8EAE6;
+    text-align: left;
+    font-size: 20px;
+}
+
+.initial_userIcon{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 90%;
+    top: 8%;
+    outline: none;
+    border: none;
+}
+
+main{
+    /* searchResult_bx */
+    position: absolute;
+    width: 1247px;
+    height: 750px;
+    left: 15%;
+    top: 20%;
+
+    background: #E8EAE6;
+    border-radius: 30px;
+}
+
+main div ul li {
+    float: left;
+    position: relative;
+    list-style-type: none;
+    text-align: center;
+    font-family: 'Neuton', serif;
+    font-size: 15px;
+    line-height: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+main div ul li a{
+    position: absolute;
+    font-size: 82px;
+    left: 30px;
+    bottom: 50px;
+    opacity: 0.9;
+    text-shadow: #000 2px 2px 3px;
+}
+
+main div ul li img{
+    display: block;
+    width: 50%;
+    max-height: 100px;
+}
+
+
+main div ul li img:hover{
+    transform: scale(1.15);
+}
