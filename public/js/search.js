@@ -48,8 +48,13 @@ const render = async () => {
             } else {
                 $img.src = `https://image.tmdb.org/t/p/w200/${content.poster_path}`;
             }
-            const textNode = document.createTextNode(content.title);
-
+            var textNode;
+            if (content.media_type === 'movie') {
+                textNode = document.createTextNode(content.title);
+            }
+            else if (content.media_type === 'tv') {
+                textNode = document.createTextNode(content.name);
+            }
             $a.append($img);
             $a.append(textNode);
             $li.append($a);
