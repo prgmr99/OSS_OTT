@@ -23,8 +23,8 @@ body{
 
 .search_btn{
     position: absolute;
-    width: 32px;
-    height: 38px;
+    width: 60px;
+    height: 60px;
     left: 92%;
     top: 20%;
     outline: none;
@@ -32,6 +32,9 @@ body{
     background: none;
     border-radius: 20px;
     background-color: #7C9473;
+
+    box-shadow: 3px 3px 3px black;
+    transition-duration: 0.2s;
 }
 
 .search_btn > img{
@@ -63,9 +66,16 @@ body{
     border: none;
 }
 
+.bookmark{
+    position: absolute;
+    top: 9%;
+    left: 75%;
+}
+
 .bookmarkBtn{
     width: 100px;
     height: 70px;
+    
     outline: none;
     border: none;
     border-radius: 30px;
@@ -76,8 +86,14 @@ body{
     text-align: center;
 
     background-color: #7C9473;
+    box-shadow: 3px 3px 3px black;
+    transition-duration: 0.2s;
 }
-
+.bookmarkBtn:active{
+    box-shadow: none;
+    margin-top : 5px;
+    margin-bottom: 5px;
+}
 /*search result view*/
 .result{
    

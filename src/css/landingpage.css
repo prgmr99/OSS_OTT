@@ -33,16 +33,14 @@ body{
     border: none;
     border-radius: 20px;
     background-color: #7C9473;
+
+    box-shadow: 3px 3px 3px black;
+    transition-duration: 0.2s;
 }
 
 .search_btn img{
     margin: 11px;
     left: 10%;
-}
-
-.search_btn:active{
-    border: #E8EAE6;
-    box-shadow: #E8EAE6;
 }
 
 /* UserIcon */
@@ -129,7 +127,7 @@ main section div ul li a{
 
     text-align: left;
     font-family: 'Neuton', serif;
-    font-size: 30px;
+    font-size: 20px;
     line-height: 20px;
     text-indent: 10px;
 }
