@@ -1,5 +1,6 @@
 "use strict";
 
+//import { obj_user } from "./signIn";
 var api_key = '6c616e9a21c6e51d1191f6fc4f2d11c4';
 var $search_form = document.querySelector('.search_form');
 var $search_txt = document.querySelector('.search_txt');
@@ -7,16 +8,20 @@ var $result_contents = document.querySelector('.result_contents');
 var $seriesList = document.querySelector('.seriesList');
 var $movieList = document.querySelector('.movieList');
 var $fragment = document.createDocumentFragment();
+var signInBtn = document.querySelector('#signInBtn'); //console.log(email);
+
+var obj = JSON.parse(localStorage.getItem('obj_user'));
+console.log(obj); //console.log(obj.user);
 
 $search_form.onsubmit = function (e) {
   e.preventDefault();
-  $result_contents.innerHTML = '';
-  console.log($search_form.querySelector('input').value);
+  $result_contents.innerHTML = ''; //console.log($search_form.querySelector('input').value);
+
   render();
 };
 
 var render = function render() {
-  var resContent, _ref, results;
+  var resContent, _ref, results, bmBtn;
 
   return regeneratorRuntime.async(function render$(_context) {
     while (1) {
@@ -34,6 +39,13 @@ var render = function render() {
         case 6:
           _ref = _context.sent;
           results = _ref.results;
+          //console.log($search_txt.value);
+          bmBtn = document.querySelector("#bookMarkBtn");
+          bmBtn.addEventListener('click', function () {
+            var mvList = JSON.parse(localStorage.getItem('obj_user'));
+            mvList.mv.push($search_txt.value);
+            localStorage.setItem('obj_user', JSON.stringify(mvList));
+          });
           results.forEach(function (content) {
             var $li = document.createElement('li');
             $li.id = content.id;
@@ -45,28 +57,35 @@ var render = function render() {
             if (content.poster_path == null) {
               $img.src = '../image/notready.png';
             } else {
-              $img.src = "https://image.tmdb.org/t/p/w500/".concat(content.poster_path);
+              $img.src = "https://image.tmdb.org/t/p/w200/".concat(content.poster_path);
             }
 
-            var textNode = document.createTextNode(content.title);
+            var textNode;
+
+            if (content.media_type === 'movie') {
+              textNode = document.createTextNode(content.title);
+            } else if (content.media_type === 'tv') {
+              textNode = document.createTextNode(content.name);
+            }
+
             $a.append($img);
             $a.append(textNode);
             $li.append($a);
             $fragment.append($li);
             $result_contents.append($fragment);
           });
-          _context.next = 14;
+          _context.next = 16;
           break;
 
-        case 11:
-          _context.prev = 11;
+        case 13:
+          _context.prev = 13;
           _context.t0 = _context["catch"](0);
           console.log('[ERROR]' + _context.t0);
 
-        case 14:
+        case 16:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[0, 11]]);
+  }, null, null, [[0, 13]]);
 };
